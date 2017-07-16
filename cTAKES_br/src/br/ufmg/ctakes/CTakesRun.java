@@ -67,7 +67,7 @@ public class CTakesRun {
 	  CTakesRun t = new CTakesRun();
 	  t.initializeLogging();
 	  String inputText = "Teste.txt";
-	  String descFile = "AggregatePos/desc/AggregatePos.xml";
+	  String descFile = "cTAKES_br/desc/AggregatePos.xml";
 	  if (args.length>0) inputText = args[0];
 	  if (args.length>1) descFile = args[1];
 	  t.loadTextResource(FileLocator.getAsStream(inputText));
