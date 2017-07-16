@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>  
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="SimpleSegmentAnnotator">
+      <import location="../../ctakes/ctakes-core/desc/analysis_engine/SimpleSegmentAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="SentenceDetectorAnnotator">
+      <import location="../../ctakes/ctakes-core/desc/analysis_engine/SentenceDetectorAnnotator.xml"/>
+    </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="TokenizerAnnotator">
+      <import location="../../ctakes/ctakes-core/desc/analysis_engine/TokenizerAnnotator.xml"/>
+    
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="POSTagger">
+      <import location="../../ctakes/ctakes-pos-tagger/desc/POSTagger.xml"/>
+    
+    </delegateAnalysisEngine>
+    
+    <delegateAnalysisEngine key="PosTagConverter">
+      <import location="../../PosTagConverter/desc/PosTagConverter.xml"/>
+    
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>AggregatePos</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+        <node>SimpleSegmentAnnotator</node>
+        <node>SentenceDetectorAnnotator</node>
+        <node>TokenizerAnnotator</node>
+        <node>POSTagger</node>
+        <node>PosTagConverter</node>
+      </fixedFlow>
+    </flowConstraints>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
