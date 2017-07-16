@@ -30,6 +30,7 @@ public class SentenceDetectorTrain {
 	 *            training_data_filename name_of_model_to_create iters? cutoff?
 	 * @throws IOException
 	 */
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws IOException {
 		final Logger logger = Logger.getLogger(SentenceDetector.class.getName()
 				+ ".main()");
