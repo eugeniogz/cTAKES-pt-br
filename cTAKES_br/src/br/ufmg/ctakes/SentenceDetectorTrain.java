@@ -81,7 +81,7 @@ public class SentenceDetectorTrain {
 		  // Abbreviations dictionary
 		  // TODO: Actually import a Dictionary of abbreviations
 		  Dictionary dict = new Dictionary();
-		  dict.put(new StringList("Dr."));dict.put(new StringList("Mr."));
+		  //dict.put(new StringList("Dr."));dict.put(new StringList("Mr."));
 		  try {
 		    mod = SentenceDetectorME.train("pt-br", sampleStream, true, dict, mlParams);
 		  } finally {
