@@ -6,16 +6,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.LogManager;
-
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 
 import org.apache.ctakes.core.resource.FileLocator;
 import org.apache.ctakes.typesystem.type.syntax.BaseToken;
@@ -28,11 +24,9 @@ import org.apache.uima.cas.CASException;
 import org.apache.uima.cas.Feature;
 import org.apache.uima.cas.SofaFS;
 import org.apache.uima.cas.impl.CASImpl;
-import org.apache.uima.cas.impl.XmiCasDeserializer;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.internal.util.Timer;
 import org.apache.uima.resource.ResourceSpecifier;
-import org.apache.uima.util.FileUtils;
 import org.apache.uima.util.Level;
 import org.apache.uima.util.Logger;
 import org.apache.uima.util.ProcessTrace;
@@ -44,14 +38,6 @@ public class CTakesRun {
 
 	private String outputFile;
 
-	private File textFile = null;
-
-	private File fileOpenDir = null;
-
-	private File annotOpenDir = null;
-
-	private File xcasFileOpenDir = null;
-
 	private CAS cas = null;
 
 	private AnalysisEngine ae = null;
@@ -60,9 +46,7 @@ public class CTakesRun {
 
 	private Logger log = null;
 
-	private String dataPathName;
-
-	private String textArea;
+	private String texto;
 
 	public static void main(String[] args) {
 		try {
@@ -105,10 +89,6 @@ public class CTakesRun {
 				+ timer.getTimeSpan() + ".");
 	}
 
-	public void setDataPath(String dataPath) {
-		this.dataPathName = dataPath;
-	}
-
 	public void loadAEDescriptor(String aeDir) {
 		Timer time = new Timer();
 		time.start();
@@ -141,12 +121,12 @@ public class CTakesRun {
 		}
 	}
 
-	public void handleException(Throwable e) {
+	private void handleException(Throwable e) {
 		StringBuffer msg = new StringBuffer();
 		handleException(e, msg);
 	}
 
-	protected void handleException(Throwable e, StringBuffer msg) {
+	private void handleException(Throwable e, StringBuffer msg) {
 		msg.append(e.getClass().getName() + ": ");
 		if (e.getMessage() != null) {
 			msg.append(e.getMessage());
@@ -170,7 +150,7 @@ public class CTakesRun {
 		setTextNoTitle(convertStreamToString(rs));
 	}
 
-	String convertStreamToString(InputStream is) {
+	private String convertStreamToString(InputStream is) {
 		java.util.Scanner s = new java.util.Scanner(is, "UTF-8");
 		s.useDelimiter("\\A");
 		String ret = "";
@@ -181,72 +161,9 @@ public class CTakesRun {
 		return ret;
 	}
 
-	public void loadFile() {
-		try {
-			if (this.textFile.exists() && this.textFile.canRead()) {
-				String text = null;
-				text = FileUtils.file2String(this.textFile);
-				setTextNoTitle(text);
-				setTitle();
-			} else {
-				handleException(
-						new IOException("File does not exist or is not readable: " + this.textFile.getAbsolutePath()));
-			}
-		} catch (UnsupportedEncodingException e) {
-			StringBuffer msg = new StringBuffer("Unsupported text encoding (code page): ");
-			handleException(e, msg);
-		} catch (Exception e) {
-			handleException(e);
-		}
-	}
-
-	public void loadXmiFile(File xmiCasFile) {
-		try {
-			setXcasFileOpenDir(xmiCasFile.getParentFile());
-			Timer time = new Timer();
-			time.start();
-			SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
-			XmiCasDeserializer xmiCasDeserializer = new XmiCasDeserializer(getCas().getTypeSystem());
-			getCas().reset();
-			parser.parse(xmiCasFile, xmiCasDeserializer.getXmiCasHandler(getCas(), true));
-			time.stop();
-			System.err.println("Done loading XMI CAS file in " + time.getTimeSpan() + ".");
-		} catch (Exception e) {
-			e.printStackTrace();
-			handleException(e);
-		}
-	}
-
-	/**
-	 * Set the text to be analyzed.
-	 * 
-	 * @param text
-	 *            The text.
-	 */
-	public void setText(String text) {
-		this.textFile = null;
-		setTextNoTitle(text);
-		setTitle();
-	}
-
-	/**
-	 * Load a text file.
-	 * 
-	 * @param textFile1
-	 *            The text file.
-	 */
-	public void loadTextFile(File textFile1) {
-		this.textFile = textFile1;
-		loadFile();
-	}
-
 	// Set the text.
-	public void setTextNoTitle(String text) {
-		this.textArea = text;
-	}
-
-	public void setTitle() {
-
+	private void setTextNoTitle(String text) {
+		this.texto = text;
 	}
 
 	private Writer getOutPutWriter() {
@@ -303,7 +220,7 @@ public class CTakesRun {
 		this.log = UIMAFramework.getLogger();
 	}
 
-	protected boolean setupAE(InputStream aeText, String aePath) {
+	private boolean setupAE(InputStream aeText, String aePath) {
 		try {
 
 			// Destroy old AE.
@@ -330,10 +247,10 @@ public class CTakesRun {
 
 	private final void initCas() {
 		this.cas.setDocumentLanguage("pt-br");
-		this.cas.setDocumentText(this.textArea);
+		this.cas.setDocumentText(this.texto);
 	}
 
-	protected void internalRunAE(boolean doCasReset) {
+	private void internalRunAE(boolean doCasReset) {
 		try {
 			if (doCasReset) {
 				// Change to Initial view
@@ -434,42 +351,6 @@ public class CTakesRun {
 			out.write(string);
 	}
 
-	public CAS getCas() {
-		return this.cas;
-	}
-
-	public AnalysisEngine getAe() {
-		return this.ae;
-	}
-
-	public File getFileOpenDir() {
-		return this.fileOpenDir;
-	}
-
-	public void setFileOpenDir(File fileOpenDir) {
-		this.fileOpenDir = fileOpenDir;
-	}
-
-	public File getTextFile() {
-		return this.textFile;
-	}
-
-	public void setTextFile(File textFile) {
-		this.textFile = textFile;
-	}
-
-	public File getXcasFileOpenDir() {
-		return this.xcasFileOpenDir;
-	}
-
-	public void setXcasFileOpenDir(File xcasFileOpenDir) {
-		this.xcasFileOpenDir = xcasFileOpenDir;
-	}
-
-	public void setCas(CAS cas) {
-		this.cas = cas;
-	}
-
 	public void destroyAe() {
 		this.cas = null;
 		if (this.ae != null) {
@@ -477,21 +358,4 @@ public class CTakesRun {
 			this.ae = null;
 		}
 	}
-
-	public File getAnnotOpenDir() {
-		return this.annotOpenDir;
-	}
-
-	public void setAnnotOpenDir(File annotOpenDir) {
-		this.annotOpenDir = annotOpenDir;
-	}
-
-	public String getDataPathName() {
-		return this.dataPathName;
-	}
-
-	public void setDataPathName(String dataPathName) {
-		this.dataPathName = dataPathName;
-	}
-
 }

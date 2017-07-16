@@ -113,8 +113,7 @@ public class SentenceDetectorTrain {
 	public static File getReadableFile(String fn) throws IOException {
 		File f = new File(fn);
 		if (!f.canRead()) {
-			throw new IOException("Unable to read from file "
-					+ f.getAbsolutePath());
+			throw new IOException("Unable to read from file " + f.getAbsolutePath());
 		}
 		return f;
 	}
