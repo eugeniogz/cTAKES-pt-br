@@ -17,7 +17,6 @@ import opennlp.tools.sentdetect.SentenceSampleStream;
 import opennlp.tools.util.MarkableFileInputStreamFactory;
 import opennlp.tools.util.ObjectStream;
 import opennlp.tools.util.PlainTextByLineStream;
-import opennlp.tools.util.StringList;
 import opennlp.tools.util.TrainingParameters;
 
 public class SentenceDetectorTrain {
