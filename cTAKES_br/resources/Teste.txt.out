@@ -1,0 +1,9 @@
+=====> Sentenças:
+O paciente tomou 325.000,00 mg de aspirina para a dor no joelho conforme receita do Dr. Paulo e Sr. José.
+
+====> Tokens:
+O:WordToken paciente:WordToken tomou:WordToken 325.000:NumToken ,:PunctuationToken 00:NumToken mg:WordToken de:WordToken aspirina:WordToken para:WordToken a:WordToken dor:WordToken no:WordToken joelho:WordToken conforme:WordToken receita:WordToken do:WordToken Dr.:WordToken Paulo:WordToken e:WordToken Sr.:WordToken José:WordToken .:PunctuationToken
+
+====> Part of Speech:
+O_PDT paciente_NN tomou_VBZ 325.000_CD ,_, 00_CD mg_NN de_IN aspirina_NN para_IN a_PDT dor_NN no_JJ joelho_NN conforme_JJ receita_VBZ do_VBZ Dr._NNP Paulo_NNP e_CC Sr._NN José_NNP ._.
+

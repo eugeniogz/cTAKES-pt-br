@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 
 import org.apache.ctakes.core.ae.SentenceDetector;
+import org.apache.ctakes.core.resource.FileLocator;
 import org.apache.ctakes.core.sentence.EndOfSentenceScannerImpl;
 import org.apache.log4j.Logger;
 
@@ -39,10 +40,10 @@ public class SentenceDetectorTrain {
 			usage(logger);
 			System.exit(-1);
 		}
+		
+		File inFile = FileLocator.locateFile(args[0]);
 
-		File inFile = getReadableFile(args[0]);
-
-		File outFile = getFileInExistingDir(args[1]);
+		File outFile = FileLocator.locateFile(args[1]);
 		// File outFile = new File(args[1]);
 
 		int iters = 100;

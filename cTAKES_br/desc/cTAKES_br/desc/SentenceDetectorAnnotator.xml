@@ -53,7 +53,7 @@
 <nameValuePair>
 <name>SentenceModelFile</name>
 <value>
-<string>org/apache/ctakes/sentdetect/sample_sd.mod</string>
+<string>sample_sd.mod</string>
 </value>
 </nameValuePair>
 </configurationParameterSettings>

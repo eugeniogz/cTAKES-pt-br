@@ -42,7 +42,7 @@
 <name>PosModelFile</name>
 <value>
 <!--string>org/apache/ctakes/postagger/models/mayo-pos.zip</string-->
-<string>org/apache/ctakes/postagger/models/pt-pos-maxent.bin</string>
+<string>pt-pos-maxent.bin</string>
 </value>
 </nameValuePair>
 </configurationParameterSettings>
