@@ -16,7 +16,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/apache-ctakes-4.0.0/desc"/>
+	<classpathentry kind="lib" path="desc"/>
 	<classpathentry kind="lib" path="C:/apache-ctakes-4.0.0/resources"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
