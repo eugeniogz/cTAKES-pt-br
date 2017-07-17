@@ -4,22 +4,22 @@
   <primitive>false</primitive>  
   <delegateAnalysisEngineSpecifiers>
     <delegateAnalysisEngine key="SimpleSegmentAnnotator">
-      <import location="../../ctakes/ctakes-core/desc/analysis_engine/SimpleSegmentAnnotator.xml"/>
+      <import location="SimpleSegmentAnnotator.xml"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="SentenceDetectorAnnotator">
-      <import location="../../ctakes/ctakes-core/desc/analysis_engine/SentenceDetectorAnnotator.xml"/>
+      <import location="SentenceDetectorAnnotator.xml"/>
     </delegateAnalysisEngine>
   <delegateAnalysisEngine key="TokenizerAnnotator">
-      <import location="../../ctakes/ctakes-core/desc/analysis_engine/TokenizerAnnotator.xml"/>
+      <import location="TokenizerAnnotator.xml"/>
     
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="POSTagger">
-      <import location="../../ctakes/ctakes-pos-tagger/desc/POSTagger.xml"/>
+      <import location="POSTagger.xml"/>
     
     </delegateAnalysisEngine>
     
     <delegateAnalysisEngine key="PosTagConverter">
-      <import location="../../PosTagConverter/desc/PosTagConverter.xml"/>
+      <import location="PosTagConverter.xml"/>
     
     </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
