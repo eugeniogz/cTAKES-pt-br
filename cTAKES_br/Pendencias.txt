@@ -1,0 +1,8 @@
+Tokenizer -> números no formato brasileiro
+
+SentenceDetector -> Abreviaturas inserir outras além de Sr. e Dr. no arquivo 
+treinoSentenceDetector.txt e treinar novamente
+
+posTagger -> Está marcando "do" como verbo. Considerar criar e treinar com um arquivo novo, neste
+caso é mais complexo porque é necessário um vocabulário extenso.
+
