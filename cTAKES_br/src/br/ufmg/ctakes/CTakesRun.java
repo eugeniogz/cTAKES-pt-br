@@ -15,6 +15,7 @@ import java.util.logging.LogManager;
 
 import org.apache.ctakes.core.resource.FileLocator;
 import org.apache.ctakes.typesystem.type.syntax.BaseToken;
+import org.apache.ctakes.typesystem.type.syntax.Chunk;
 import org.apache.ctakes.typesystem.type.syntax.NewlineToken;
 import org.apache.ctakes.typesystem.type.textspan.Sentence;
 import org.apache.uima.UIMAFramework;
@@ -330,6 +331,14 @@ public class CTakesRun {
 						System.err.println(e.getMessage());
 					}
 				}
+				
+				println(out, "====> Chunks:");
+				for (Chunk chunk : JCasUtil.selectCovered(Chunk.class, sentence)) {
+					print(out, space + chunk.getCoveredText() + "|");
+					space = " ";
+				}
+				println(out, "\n");
+
 			}
 			if (out != null)
 				out.close();

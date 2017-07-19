@@ -22,6 +22,9 @@
       <import location="PosTagConverter.xml"/>
     
     </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="Chunker">
+		<import location="Chunker.xml" />
+	</delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>AggregatePos</name>
@@ -37,6 +40,7 @@
         <node>TokenizerAnnotator</node>
         <node>POSTagger</node>
         <node>PosTagConverter</node>
+        <node>Chunker</node>
       </fixedFlow>
     </flowConstraints>
     <fsIndexCollection/>

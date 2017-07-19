@@ -1,0 +1,1 @@
+O_PDT Sr._NN Antônio_NNP tomou_VBZ 500_CD mg_NN de_IN aspirina_NN para_IN a_PDT dor_NN no_JJ joelho_NN conforme_JJ receita_NN do_IN Dr._NNP Paulo_NNP ._.

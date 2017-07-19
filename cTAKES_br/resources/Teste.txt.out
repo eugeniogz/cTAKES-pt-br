@@ -1,9 +1,32 @@
 =====> Sentenças:
-O Sr. Antônio tomou 325.000 mg de aspirina para a dor no joelho conforme receita do Dr. Paulo.
+O Sr. Antônio tomou 500,00 mg de aspirina para a dor no joelho conforme receita do Dr. Paulo.
+Já a Sra. Berenice ficou constipada e precisou de cuidados especiais para melhorar.
+A Dona Laurinda conversou com a filha e está se adaptando ao tratamento.
 
 ====> Tokens:
-O:WordToken Sr.:WordToken Antônio:WordToken tomou:WordToken 325.000:NumToken mg:WordToken de:WordToken aspirina:WordToken para:WordToken a:WordToken dor:WordToken no:WordToken joelho:WordToken conforme:WordToken receita:WordToken do:WordToken Dr.:WordToken Paulo:WordToken .:PunctuationToken
+O:WordToken Sr.:WordToken Antônio:WordToken tomou:WordToken 500:NumToken ,:PunctuationToken 00:NumToken mg:WordToken de:WordToken aspirina:WordToken para:WordToken a:WordToken dor:WordToken no:WordToken joelho:WordToken conforme:WordToken receita:WordToken do:WordToken Dr.:WordToken Paulo:WordToken .:PunctuationToken
 
 ====> Part of Speech:
-O_PDT Sr._NN Antônio_NNP tomou_VBZ 325.000_CD mg_NN de_IN aspirina_NN para_IN a_PDT dor_NN no_JJ joelho_NN conforme_JJ receita_VBZ do_VBZ Dr._NNP Paulo_NNP ._.
+O_PDT Sr._NN Antônio_NNP tomou_VBZ 500_CD ,_, 00_CD mg_NN de_IN aspirina_NN para_IN a_PDT dor_NN no_JJ joelho_NN conforme_JJ receita_VBZ do_VBZ Dr._NNP Paulo_NNP ._.
+
+====> Chunks:
+ O Sr. Antônio: tomou: 500: ,: 00 mg: de: aspirina: para: a dor no joelho conforme: receita: do: Dr. Paulo:
+
+====> Tokens:
+Já:WordToken a:WordToken Sra.:WordToken Berenice:WordToken ficou:WordToken constipada:WordToken e:WordToken precisou:WordToken de:WordToken cuidados:WordToken especiais:WordToken para:WordToken melhorar:WordToken .:PunctuationToken
+
+====> Part of Speech:
+Já_RB a_PDT Sra._NNP Berenice_NNP ficou_VBZ constipada_VBZ e_CC precisou_VBZ de_IN cuidados_NN especiais_JJ para_IN melhorar_VBZ ._.
+
+====> Chunks:
+ Já a Sra. Berenice: ficou: constipada e precisou: de: cuidados especiais: para: melhorar:
+
+====> Tokens:
+A:WordToken Dona:WordToken Laurinda:WordToken conversou:WordToken com:WordToken a:WordToken filha:WordToken e:WordToken está:WordToken se:WordToken adaptando:WordToken ao:WordToken tratamento:WordToken .:PunctuationToken
+
+====> Part of Speech:
+A_PDT Dona_NNP Laurinda_NNP conversou_VBZ com_IN a_PDT filha_NN e_CC está_VBZ se_PRP adaptando_VBZ ao_IN tratamento_NN ._.
+
+====> Chunks:
+ A Dona Laurinda: conversou: com: a filha: e: está: se: adaptando: ao: tratamento:
 

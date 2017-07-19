@@ -1,4 +1,4 @@
-Tokenizer -> números no formato brasileiro
+Tokenizer -> números no formato brasileiro (Está separando 500,00 em três).
 
 SentenceDetector -> Abreviaturas inserir outras além de Sr. e Dr. no arquivo 
 treinoSentenceDetector.txt e treinar novamente
