@@ -55,9 +55,10 @@ public class CTakesRun {
 			t.initializeLogging();
 			String inputText = "Teste.txt";
 			String descFile = "cTAKES_br/desc/AggregatePos.xml";
-			t.outputFile = FileLocator.getFullPath(inputText) + ".out";
 			if (args.length > 0)
 				inputText = args[0];
+			t.outputFile = FileLocator.getFullPath(inputText) + ".out";
+			
 			if (args.length > 1)
 				descFile = args[1];
 			if (args.length > 2)
@@ -298,11 +299,12 @@ public class CTakesRun {
 				println(out, sentence.getCoveredText());
 			}
 			println(out, "");
-			for (Sentence sentence : sentences) {
+			List<BaseToken> printableTokens = new ArrayList<>();
+			String space = "";
 
-				List<BaseToken> printableTokens = new ArrayList<>();
-				String space = "";
-				println(out, "====> Tokens:");
+			println(out, "====> Tokens:");
+			for (Sentence sentence : sentences) {
+                space = "";
 				for (BaseToken token : JCasUtil.selectCovered(BaseToken.class, sentence)) {
 					if (token instanceof NewlineToken)
 						continue;
@@ -310,36 +312,52 @@ public class CTakesRun {
 					print(out, space + token.getCoveredText() + ":" + token.getType().getShortName());
 					space = " ";
 				}
-				println(out, "\n");
+				println(out,"");
+			}
+			
+			println(out, "====> Part of Speech:");
+			space = "";
+
+			for (Sentence sentence : sentences) {
+				printableTokens = new ArrayList<>();
+				
+				for (BaseToken token : JCasUtil.selectCovered(BaseToken.class, sentence)) {
+					if (token instanceof NewlineToken)
+						continue;
+					printableTokens.add(token);
+				}
 
 				String[] words = new String[printableTokens.size()];
 				for (int i = 0; i < words.length; i++) {
 					words[i] = printableTokens.get(i).getCoveredText();
 				}
-
+	
 				if (words.length > 0) {
 					try {
-						println(out, "====> Part of Speech:");
 						space = "";
 						for (int i = 0; i < printableTokens.size(); i++) {
 							BaseToken token = printableTokens.get(i);
 							print(out, space + token.getCoveredText() + "_" + token.getPartOfSpeech());
 							space = " ";
 						}
-						println(out, "\n");
+						println(out,"");
 					} catch (Exception e) {
 						System.err.println(e.getMessage());
 					}
 				}
+			}
+			println(out, "====> Chunks:");
+			for (Sentence sentence : sentences) {
 				
-				println(out, "====> Chunks:");
 				for (Chunk chunk : JCasUtil.selectCovered(Chunk.class, sentence)) {
-					print(out, space + chunk.getCoveredText() + "|");
+					print(out, space + chunk.getCoveredText() + "|" + chunk.getChunkType());
 					space = " ";
 				}
-				println(out, "\n");
+				println(out, "");
 
 			}
+
+
 			if (out != null)
 				out.close();
 		} catch (IOException e1) {
