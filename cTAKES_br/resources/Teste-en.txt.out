@@ -1,0 +1,16 @@
+=====> Sentenças:
+Mr. Antonio took 500 mg of aspirin for knee pain as per Dr. Paul's prescription.
+Mrs. Berenice was constipated and needed special care to improve.
+Mrs. Laurinda talked to her daughter and is adjusting to the treatment.
+====> Tokens:
+Mr.:WordToken Antonio:WordToken took:WordToken 500:NumToken mg:WordToken of:WordToken aspirin:WordToken for:WordToken knee:WordToken pain:WordToken as:WordToken per:WordToken Dr.:WordToken Paul:WordToken 's:ContractionToken prescription:WordToken .:PunctuationToken
+Mrs.:WordToken Berenice:WordToken was:WordToken constipated:WordToken and:WordToken needed:WordToken special:WordToken care:WordToken to:WordToken improve:WordToken .:PunctuationToken
+Mrs.:WordToken Laurinda:WordToken talked:WordToken to:WordToken her:WordToken daughter:WordToken and:WordToken is:WordToken adjusting:WordToken to:WordToken the:WordToken treatment:WordToken .:PunctuationToken
+====> Part of Speech:
+Mr._NNP Antonio_NNP took_VBD 500_CD mg_NNS of_IN aspirin_NN for_IN knee_NN pain_NN as_IN per_IN Dr._NNP Paul_NNP 's_POS prescription_NN ._.
+Mrs._NNP Berenice_NNP was_VBD constipated_VBN and_CC needed_VBN special_JJ care_NN to_TO improve_VB ._.
+Mrs._NNP Laurinda_NN talked_VBD to_IN her_PRP$ daughter_NN and_CC is_VBZ adjusting_VBG to_IN the_DT treatment_NN ._.
+====> Chunks:
+Mr. Antonio|NP took|VP 500 mg|NP of|PP aspirin|NP for|PP knee pain|NP as|PP per|PP Dr. Paul|NP 's prescription|NP
+Mrs. Berenice|NP was constipated|VP and|O needed special care|NP to improve|VP
+Mrs. Laurinda|NP talked|VP to|PP her daughter|NP and|O is adjusting|VP to|PP the treatment|NP

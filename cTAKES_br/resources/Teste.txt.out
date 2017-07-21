@@ -2,7 +2,6 @@
 O Sr. Antônio tomou 500,00 mg de aspirina para a dor no joelho conforme receita do Dr. Paulo.
 Já a Sra. Berenice ficou constipada e precisou de cuidados especiais para melhorar.
 A Dona Laurinda conversou com a filha e está se adaptando ao tratamento.
-
 ====> Tokens:
 O:WordToken Sr.:WordToken Antônio:WordToken tomou:WordToken 500:NumToken ,:PunctuationToken 00:NumToken mg:WordToken de:WordToken aspirina:WordToken para:WordToken a:WordToken dor:WordToken no:WordToken joelho:WordToken conforme:WordToken receita:WordToken do:WordToken Dr.:WordToken Paulo:WordToken .:PunctuationToken
 Já:WordToken a:WordToken Sra.:WordToken Berenice:WordToken ficou:WordToken constipada:WordToken e:WordToken precisou:WordToken de:WordToken cuidados:WordToken especiais:WordToken para:WordToken melhorar:WordToken .:PunctuationToken
@@ -12,6 +11,6 @@ O_PDT Sr._NN Antônio_NNP tomou_VBZ 500_CD ,_, 00_CD mg_NN de_IN aspirina_NN par
 Já_RB a_PDT Sra._NNP Berenice_NNP ficou_VBZ constipada_VBZ e_CC precisou_VBZ de_IN cuidados_NN especiais_JJ para_IN melhorar_VBZ ._.
 A_PDT Dona_NNP Laurinda_NNP conversou_VBZ com_IN a_PDT filha_NN e_CC está_VBZ se_PRP adaptando_VBZ ao_IN tratamento_NN ._.
 ====> Chunks:
- O Sr. Antônio|NP tomou|VP 500|NP ,|O 00 mg|NP de|PP aspirina|NP para|PP a dor no joelho conforme|NP receita|VP do|PP Dr. Paulo|NP
- Já a Sra. Berenice|NP ficou|VP constipada e precisou|VP de|PP cuidados especiais|NP para|NP melhorar|VP
- A Dona Laurinda|NP conversou|VP com|PP a filha|NP e|O está|VP se|NP adaptando|VP ao|PP tratamento|NP
+O Sr. Antônio|NP tomou|VP 500|NP ,|O 00 mg|NP de|PP aspirina|NP para|PP a dor no joelho conforme|NP receita|VP do|PP Dr. Paulo|NP
+Já a Sra. Berenice|NP ficou|VP constipada e precisou|VP de|PP cuidados especiais|NP para|NP melhorar|VP
+A Dona Laurinda|NP conversou|VP com|PP a filha|NP e|O está|VP se|NP adaptando|VP ao|PP tratamento|NP

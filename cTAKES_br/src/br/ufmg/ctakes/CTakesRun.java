@@ -298,7 +298,6 @@ public class CTakesRun {
 			for (Sentence sentence : sentences) {
 				println(out, sentence.getCoveredText());
 			}
-			println(out, "");
 			List<BaseToken> printableTokens = new ArrayList<>();
 			String space = "";
 
@@ -348,7 +347,7 @@ public class CTakesRun {
 			}
 			println(out, "====> Chunks:");
 			for (Sentence sentence : sentences) {
-				
+				space="";
 				for (Chunk chunk : JCasUtil.selectCovered(Chunk.class, sentence)) {
 					print(out, space + chunk.getCoveredText() + "|" + chunk.getChunkType());
 					space = " ";
