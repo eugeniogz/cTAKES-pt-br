@@ -60,9 +60,9 @@ public class PosTagConverter extends JCasAnnotator_ImplBase {
 		tags.put("prp","IN");
 		tags.put("v","VBZ");
 		tags.put("v-fin","VBZ");
-		tags.put("v-ger","VBZ");
-		tags.put("v-inf","VBZ");
-		tags.put("v-pcp","VBZ");
+		tags.put("v-ger","VBG");
+		tags.put("v-inf","VB");
+		tags.put("v-pcp","VBG");
 
 		Collection<Sentence> sentences = JCasUtil.select(jCas, Sentence.class);
 		for (Sentence sentence : sentences) {
