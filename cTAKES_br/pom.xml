@@ -20,8 +20,17 @@
 		<version>4.0.1-SNAPSHOT</version> </parent -->
 	<properties>
 		<ctakes.version>4.0.1-SNAPSHOT</ctakes.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+	<parent>
+		<groupId>org.apache</groupId>
+		<artifactId>apache</artifactId>
+		<version>13</version>
+	</parent>
+	
 	<dependencyManagement>
 		<dependencies>
 			<!-- cTAKES third party dependency versions -->
@@ -498,74 +507,60 @@
 		<dependency>
 			<groupId>org.apache.uima</groupId>
 			<artifactId>uimaj-core</artifactId>
-			<version>[1.0.0,)</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.uima</groupId>
 			<artifactId>uimaj-tools</artifactId>
-			<version>[1.0.0,)</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
 			<artifactId>ctakes-pos-tagger</artifactId>
-			<version>[1.0.0,)</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
 			<artifactId>ctakes-pos-tagger-res</artifactId>
-			<version>[1.0.0,)</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
 			<artifactId>ctakes-chunker</artifactId>
-			<version>[1.0.0,)</version>
 		</dependency>
 		<!--dependency> <groupId>org.apache.ctakes</groupId> <artifactId>ctakes-clinical-pipeline</artifactId> 
 			</dependency -->
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
 			<artifactId>ctakes-type-system</artifactId>
-			<version>[1.0.0,)</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
 			<artifactId>ctakes-core</artifactId>
-			<version>[1.0.0,)</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
 			<artifactId>ctakes-utils</artifactId>
-			<version>[1.0.0,)</version>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>[1.0.0,)</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.opennlp</groupId>
 			<artifactId>opennlp-tools</artifactId>
-			<version>[1.0.0,)</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.opennlp</groupId>
 			<artifactId>opennlp-maxent</artifactId>
-			<version>[1.0.0,)</version>
 		</dependency>
 		<dependency>
 			<groupId>com.googlecode.clearnlp</groupId>
 			<artifactId>clearnlp</artifactId>
-			<version>[1.0.0,)</version>
 		</dependency>
 		<dependency>
 			<groupId>jdom</groupId>
 			<artifactId>jdom</artifactId>
-			<version>[1.0.0,)</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>[1.0.0,)</version>
 		</dependency>
 	</dependencies>
 </project>
