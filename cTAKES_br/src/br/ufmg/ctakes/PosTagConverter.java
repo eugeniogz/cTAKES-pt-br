@@ -58,7 +58,7 @@ public class PosTagConverter extends JCasAnnotator_ImplBase {
 		tags.put("pron-pers","PRP");
 		tags.put("prop","NNP");
 		tags.put("prp","IN");
-		tags.put("v","VBZ");
+		tags.put("v","VB");
 		tags.put("v-fin","VBZ");
 		tags.put("v-ger","VBG");
 		tags.put("v-inf","VB");
